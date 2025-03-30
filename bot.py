@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from telegram import Update
 from telegram.ext import Application, CommandHandler
 
-TOKEN = os.getenv("7791800424:AAFBRTy00LVoU2hZPw_euGu1UOIu1GsaoBc")  # Read token from environment variable
+TOKEN = os.getenv("botToken")  # Read token from environment variable
 CHECK_INTERVAL = 300  # 5 minutes
 
 user_urls = {}  # Store user-specific URLs
