@@ -52,7 +52,7 @@ async def monitor_stock():
         await asyncio.sleep(CHECK_INTERVAL)
 
 
-if name == "main":
+if __name__ == "__main__":
     app = Application.builder().token(TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
