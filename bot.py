@@ -7,8 +7,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler
 
 TOKEN = os.getenv("botToken")  # Read token from environment variable
-CHECK_INTERVAL = 300  # 5 minutes
-
+CHECK_INTERVAL = 30  #1/2 minutes
 user_urls = {}  # Store user-specific URLs
 
 logging.basicConfig(level=logging.INFO)
@@ -43,7 +42,7 @@ async def add_url(update: Update, context) -> None:
 
 
 async def monitor_stock():
-    """Continuously check URLs every 5 minutes."""
+    """Continuously check URLs every half minute."""
     while True:
         for user_id, url in list(user_urls.items()):
             if await check_stock(url):
